@@ -21,3 +21,28 @@ principal y secundario
 
 ![imagen página](../../images/page.png)
 
+- jugar con colores que hagan contrastes
+
+- cosas encima -> **_+ claras_** que las de abajo
+
+## Botones
+
+tienen dos características:
+
+**IMPORTANCIA:**
+<br>
+cuanta intención tenemos de que el usuario quiera pulsar el botón
+
+
+**FUNCIÓN:**
+<br>
+avisar al usuario que tipo de acción está realizando
+
+![imagen importancia botones](../../images/importancia.png)
+
+## Sistema de tamaños
+- padding o margin (px)
+
+- tamaño de fuente (px)
+
+- border radius (px)
