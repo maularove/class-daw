@@ -102,3 +102,33 @@ BEM se basa en la creación de bloques, elementos y modificadores.
     // Estilos
 }
 ```
+
+---
+<br>
+
+## 6. Estructura de ficheros
+```
+/css
+   main.css
+/scss
+   /01_utilities
+       _css-variables.scss
+       _sass-variables.scss
+       _functions.scss
+       _mixins.scss
+  /02_base
+      _override.scss
+      _reset.scss
+      _typography.scss
+  /03_layout
+      _cada_uno_de_los_layouts.scss
+  /04_components
+      _cada_uno_de_los_componentes.scss
+  /05_pages
+      _estilos_especificos_de_una_pagina_concreta.scss
+  /06_global
+      _cada_una_de_los_modificadores_globales.scss
+  main.scss
+```
+
+
