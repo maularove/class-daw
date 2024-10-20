@@ -1,5 +1,5 @@
 # DISEÑO WEB
-## Normas y estilos de diseño
+## 1. Normas y estilos de diseño
 
 - resaltar lo importante
 
@@ -13,7 +13,7 @@
 
 - cosas no relacionadas que estén separadas entre si
 
-## Colores
+## 2. Colores
 
 dos colores:
 <br>
@@ -25,7 +25,7 @@ principal y secundario
 
 - cosas encima -> **_+ claras_** que las de abajo
 
-## Botones
+## 3. Botones
 
 tienen dos características:
 
@@ -40,7 +40,7 @@ avisar al usuario que tipo de acción está realizando
 
 ![imagen importancia botones](../../images/importancia.png)
 
-## Sistema de tamaños
+## 4. Sistema de tamaños
 - padding o margin (px)
 
 - tamaño de fuente (px)
