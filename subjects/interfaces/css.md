@@ -1,9 +1,7 @@
 # CSS
 ## 1. Cómo añadimos CSS en nuestro html
-
-en CSS: 
 ```css
-//importamos
+//importamos en el head del html
 <link rel="stylesheet" href="main.css">
 
 // dentro del css
@@ -13,8 +11,7 @@ body {
 ```
 <br>
 
-podemos ponerlo en uso de dos formas:
-en el HTML:
+En el html podemos ponerlo en uso de dos formas:
 ```html
 //etiqueta style
 <style>
