@@ -95,6 +95,63 @@ en css:
 ---
 <br>
 
+## 4. Display
+Define como se comporta visualmente los elementos de una página.
+<br>
+
+Tipos comunes:
+- **_INLINE:_** para un elemento que forma parte de un párrafo.
+
+- **_INLINE-BLOCK:_** como _inline_ pero permite especificar el ancho y alto.
+
+- **_BLOCK:_** especifica ancho y alto. genera salto de línea
+<br>
+
+```css
+.destacar {
+    display: block;
+}
+```
+---
+<br>
+
+### Display : none y visibility : hidden
+- **_DISPLAY:NONE:_** hace desaparecer el elemento como si no existiera.
+
+- **_VISIBILITY:HIDDEN:_** el elemento es invisible pero ocupa su hueco.
+
+---
+<br>
+
+## 5. &nbsp
+Representa un espacio en blanco no separable
+<br>
+
+```html
+<body>
+  <!-- Aquí los espacios serán colapsados -->
+  <p>Esto    es    un    ejemplo    con    espacios    regulares.</p>
+
+  <!-- Aquí los espacios se mantienen -->
+  <p>Esto&nbsp;&nbsp;&nbsp;es&nbsp;&nbsp;&nbsp;un&nbsp;&nbsp;&nbsp;ejemplo&nbsp;&nbsp;&nbsp;con&nbsp;&nbsp;&nbsp;espacios&nbsp;&nbsp;&nbsp;no&nbsp;&nbsp;&nbsp;colapsados.</p>
+</body>
+```
+
+---
+<br>
+
+## 6. Sombras
+Usamos el box-shadow para dar sensación de profundidad sin necesidades de bordes.
+<br>
+
+```css
+.sombra {
+    box-shadow: 0 1px 3px hsla(0, 0%, .2);
+}
+```
+
+---
+<br>
 
 
 
