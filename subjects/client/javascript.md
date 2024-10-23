@@ -76,9 +76,7 @@ alert("Total articulos: " + articulos.length)
 
 ## 3. Variables
 ### var:
-- Alcance: 
-<br>
-Function scope (o global si se declara fuera)
+- Alcance: Function scope (o global si se declara fuera)
 
 - Declaración: YES
 
@@ -97,9 +95,7 @@ console.log(x);   // 2
 <br>
 
 ### let:
-- Alcance: 
-<br>
-Block scope.
+- Alcance: Block scope.
 
 - Declaración: YES (pero no puede ser redeclarada en el mismo bloque)
 
@@ -118,9 +114,7 @@ console.log(x);   // 1
 ```
 
 ### const:
-- Alcance: 
-<br>
-Block scope.
+- Alcance: Block scope.
 
 - Declaración: YES (pero no puede ser redeclarada en el mismo bloque)
 
@@ -259,4 +253,261 @@ crea un nuervo array a partir de un objeto iterable
 let frutasForm = Array.from("frutas");
 
 console.log(frutasForm) // ["f", "r", "u", "t", "a", "s"]
+```
+<br>
+
+- **_concat()_**
+<br>
+combina dos o más arrays 
+
+```js
+let verduras = ["zanahorias", "calabacín", "lechuga"];
+let alimentos = frutas.concat(verduras);
+
+console.log(alimentos) // ["fresa", "manzana", "naranja", "pera", "plátano", "zanahoria", "calabacín", "lechuga"]
+```
+<br>
+
+- **_fill()_**
+<br>
+remplaza de un número de array a otro por el elemento que queramos
+
+```js
+frutas.fill("uva", 2, 4); // 0 1 (2 3) 4 5
+
+console.log(frutas); // ["manzana", "pera", "uva", "uva", "fresa"]
+```
+<br>
+
+- **_includes()_**
+<br>
+comprueba si un array contiene un elemento (boolean)
+
+```js
+let contienePlatano = frutas.includes("plátano");
+
+console.log(contienePlatano); // true
+```
+<br>
+
+- **_indexOf() && lastIndexOf()_**
+<br>
+devuelve el índice de la primera ocurrencia de un elemento en el array
+
+```js
+// indexOf()
+let indice = frutas.indexOf("naranja")
+
+console.log(indice) // 2
+
+// lastIndex()
+let indice = frutas.indexOf("fresa")
+
+console.log(indice) // 4
+```
+<br>
+
+- **_join()_**
+<br>
+une todos los elementos de un array en un string
+
+```js
+let frutasJuntas = frutas.join(", ");
+
+console.log(frutasJuntas); // "fresa, plátano, naranja, pera, manzana" 
+```
+<br>
+
+- **_reverse()_**
+<br>
+invierte el orden de los elementos de un array
+
+```js
+frutas.reverse();
+
+console.log(frutas); // ["fresa", "plátano", "naranja", "pera", "manzana"]
+```
+<br>
+
+- **_slice()_**
+<br>
+copia una parte de un array convirtiéndolo en uno nuevo
+
+```js
+let frutas2 = frutas.slice(1, 3)
+
+console.log(frutas2) // ["pera", "naranja"]
+```
+<br>
+
+- **_splice()_**
+<br>
+añade o elimina elementos de un array
+
+```js
+// borrará los elementos desde la posición 1 a la 3
+// pondrá estos dos nuevos elementos en el medio
+frutas.splice(1, 3, "uva", "sandia");
+
+console.log(frutas) // ["manzana", "uva", "sandía", "fresa"]
+```
+<br>
+
+- **_split()_**
+<br>
+divide un string en un array de substrings
+
+```js
+let manzana = "manzana";
+let letras = manzana.split("");
+
+console.log(letras); // ["m", "a", "n", "z", "a", "n", "a"]
+```
+<br>
+
+- **_sort()_**
+<br>
+ordena los elementos de una array alfabéticamente
+
+```js
+frutas.sort();
+
+console.log(frutas); // ["fresa", "manzana", "naranja", "pera", "plátano"]
+```
+<br>
+
+### Métodos para recorrer Arrays
+```js
+let colores = ["rojo", "verde", "azul", "amarillo", "naranja"];
+``` 
+<br>
+
+- **_forEach()_**
+<br>
+ejecuta una función por cada elemento del array
+
+```js
+colores.forEach((color, index) => {
+    console.log(`${index + 1}. ${color}`);
+});
+// "1. rojo", "2. verde", "3. azul", "4. amarillo", "5. naranja"
+```
+<br>
+
+- **_map()_**
+<br>
+crea un nuevo array con los resultados de la función aplicada a cada elemento del array
+
+```js
+let coloresMayusculas = colores.map((color) => color.toUpperCas());
+
+console.log(coloresMayusculas);
+// ["ROJO", "VERDE", "AZUL", "AMARILLO", "NARANJA"]
+```
+<br>
+
+- **_filter()_**
+<br>
+crea un nuevo array con los elementos que cumplen la condición
+
+```js
+let coloresCortos = colores.filter((color) => color.length <= 4);
+
+console.log(coloresCortos);
+// ["rojo", "azul"]
+```
+<br>
+
+- **_find()_**
+<br>
+devuelve el primer elemento que cumple una funcion
+
+```js
+let color = colores.find((color) => color === "verde");
+
+console.log("color");
+// "verde"
+```
+<br>
+
+- **_findIndex()_**
+<br>
+devuelve la posición del primer elemento que cumple la función
+
+```js
+let indice = colores.findIndex((color) => color === "verde");
+
+console.log(indice)
+// 1
+```
+<br>
+
+- **_reduce()_**
+<br>
+aplica una función acumuladora a cada elemento del array, de izquierda a derecha, para reducirlo a un único valor
+
+```js
+let numeros = [1, 2, 3, 4, 5];
+let suma = numeros.reduce((total, num) => total + num, 0)
+
+console.log(suma) // 15
+// callback: (total, num) => total + num
+// total -> (es el valor inicial)
+// 0 -> (el valor de total es 0)
+```
+<br>
+
+- **_some()_**
+<br>
+comprueba si al menos un elemento cumple la condición
+
+```js
+let contieneAzul = colores.some((color) => color === "azul");
+
+console.log(contieneAzul) // true
+```
+
+---
+<br>
+
+## 7. Objetos
+ ```js
+let persona = {
+  nombre: "Ana",
+  edad: 25,
+  ciudad: "Madrid",
+};
+
+persona.nombre = "María";    // Añade el campo "nombre" al objeto y si ya existe lo sobreescribe.
+persona["nombre"] = "María"; // Añade el campo "nombre" al objeto y si ya existe lo sobreescribe.
+ ```
+
+ ---
+ <br>
+
+ ## 8. Spread Operator
+ Se utiliza para expandir elementos de un array u objeto en otro array u objeto
+
+```js
+// ...colores -> copia del array
+let colores = ["rojo", "verde", "azul"];
+let colores2 = ["amarillo", "naranja", ...colores];
+
+console.log(colores2);
+// ["amarillo", "naranja", "rojo", "verde", "azul"]
+```
+
+---
+<br>
+
+## 9. Rest Parameter
+Permite a una función aceptar un número indefinido de argumentos como un array
+
+```js
+function sumar(...numeros) {
+    return numeros.reduce((total, num) => total + num, 0)
+}
+
+console.log(sumar(1, 2, 3, 4, 5)); //12
+// sume todos los números de arriba que le vayas poniendo
 ```
