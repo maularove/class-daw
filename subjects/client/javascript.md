@@ -511,3 +511,69 @@ function sumar(...numeros) {
 console.log(sumar(1, 2, 3, 4, 5)); //12
 // sume todos los números de arriba que le vayas poniendo
 ```
+
+---
+<br>
+
+## 10. For...in & For...of
+- **_For...in:_**
+<br>
+Itera sobre las propiedades de un objeto
+
+```js
+let colores = ["rojo", "verde", "azul"];
+for (let index in colores) {
+  console.log(colores[index]);
+}
+```
+<br>
+
+- **_For...of:_**
+<br>
+Itera sobre los elementos de cualquier objeto iterable (array, string, map, set, etc...)
+
+```js
+let colores = ["rojo", "verde", "azul"];
+for (let color of colores) {
+  console.log(color);
+}
+```
+
+---
+<br>
+
+## 11. Arrow functions
+```js
+// Función tradicional
+function sumar(a, b) {
+  return a + b;
+}
+
+// Arrow function
+let sumar = (a, b) => a + b;
+```
+
+---
+<br>
+
+## 12. Synchronous vs Asynchronous
+- **_Synchronous:_**
+<br>
+El código se ejecuta en secuencia, línea por línea, asegurándose que la operación se complete antes de que comience la siguiente.
+
+```js
+console.log("Primero");
+console.log("Segundo");
+console.log("Tercero");
+```
+<br>
+
+- **_Asynchronous:_**
+<br>
+El código asíncrono permite que ciertas operaciones se inicien y se completen en el futuro, sin bloquear la ejecucción del código que sigue.
+
+```js
+console.log("Primero");
+setTimeout(() => console.log("Tercero"), 1000);
+console.log("Segundo");
+```
