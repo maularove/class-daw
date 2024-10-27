@@ -5,19 +5,14 @@ Se usa para `enviar` y `recibir` datos en la web.
 
 ## 1. Características
 - **_Sencillo:_**
-<br>
 modo texto, fácil de usar
 
 - **_Extensible:_**
-<br>
 se pueden enviar más metadatos que los que están por defecto.
-<br>
 _ej. nº de página_
 
 - **_Sin estado:_**
-<br>
 cada petición es independiente / suele tener problemas. 
-<br>
 _ej problema. carrito de la compra_
 
 ---
@@ -25,23 +20,18 @@ _ej problema. carrito de la compra_
 
 ## 2. Ventajas
 - **_Cache:_**
-<br>
 controlar el cache en las páginas mejora la velocidad
 
 - **_Autentificación:_**
-<br>
 permite `identificar` al usuario
 
 - **_Proxys:_**
-<br>
 permite de forma permanente usar proxies
 
 - **_Sesiones:_**
-<br>
 podemos mantener el estado entre peticiones mediante cookies
 
 - **_Formatos:_**
-<br>
 permite indicar el formato de lo que se `envía`, `pide` y `retorna`
 
 ---
