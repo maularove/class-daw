@@ -47,7 +47,7 @@ Accept-Language: fr
 <br>
 
 - `GET` => método donde pide datos
-<br>
+
 ej. GET, PUT, POST, DELETE
 
 - `/index.html` => **ruta** dentro del servidor del documento que estamos pidiendo
@@ -74,11 +74,11 @@ Content-Type: text/html; charset=utf-8
 - `200 OK` => muestra si la petición es **_existosa / no existosa_**
 
 - `Content-Length: 29769` => _cabecera llamada **Content-Length**_
-<br>
+
 indica **_bytes_** que ocupan los datos que devuelve
 
 - `Content-Type: text/html; charset=utf-8` => _cabecera llamada **Content-Type**_
-<br>
+
 indica el formato **MIME type** de los datos que devuelve y su codificación
 
 - `<!DOCTYPE html...` => los datos que se han pedido
