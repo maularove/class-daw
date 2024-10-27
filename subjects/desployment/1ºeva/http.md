@@ -47,7 +47,6 @@ Accept-Language: fr
 <br>
 
 - `GET` => método donde pide datos
-
 ej. GET, PUT, POST, DELETE
 
 - `/index.html` => **ruta** dentro del servidor del documento que estamos pidiendo
@@ -74,11 +73,9 @@ Content-Type: text/html; charset=utf-8
 - `200 OK` => muestra si la petición es **_existosa / no existosa_**
 
 - `Content-Length: 29769` => _cabecera llamada **Content-Length**_
-
 indica **_bytes_** que ocupan los datos que devuelve
 
 - `Content-Type: text/html; charset=utf-8` => _cabecera llamada **Content-Type**_
-
 indica el formato **MIME type** de los datos que devuelve y su codificación
 
 - `<!DOCTYPE html...` => los datos que se han pedido
@@ -93,13 +90,11 @@ Están las que se envían en `petición` && las que se retornan en la `respuesta
 
 ### Petición
 - `Accept` => formato **MIME type** que queremos que devuelva.
-
 ej. **text/html**, **text/xml**, **application/json**, **application/pdf** 
 
 - `Accept-Language` => idioma en el que queremos los datos
 
 - `Host` => el dominio al que se está enviando la petición
-
 es útil porque permite tener alojados varios dominios en un mismo servidor
 
 - `Content-Type` => formato de los datos que envían al servidor.
