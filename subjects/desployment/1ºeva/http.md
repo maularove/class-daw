@@ -93,26 +93,22 @@ Están las que se envían en `petición` && las que se retornan en la `respuesta
 
 ### Petición
 - `Accept` => formato **MIME type** que queremos que devuelva.
-<br>
+
 ej. **text/html**, **text/xml**, **application/json**, **application/pdf** 
 
 - `Accept-Language` => idioma en el que queremos los datos
 
 - `Host` => el dominio al que se está enviando la petición
-<br>
+
 es útil porque permite tener alojados varios dominios en un mismo servidor
 
 - `Content-Type` => formato de los datos que envían al servidor.
-<br>
 formatos suelen ser: **_uft-8_** / **_ISO-8859-1_**
-<br>
 _ej. text/html, text/xml, application/json_
 
 ### Respuesta
 - `Content-Type` => formato de los datos que envían al servidor.
-<br>
 formatos suelen ser: **_uft-8_** / **_ISO-8859-1_**
-<br>
 _ej. text/html, text/xml, application/json_
 
 - `Content Language` => idioma de los datos que se retornan
