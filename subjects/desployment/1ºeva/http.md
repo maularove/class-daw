@@ -112,3 +112,145 @@ ej. **text/html**, **text/xml**, **application/json**, **application/pdf**
 <br>
 es útil porque permite tener alojados varios dominios en un mismo servidor
 
+- `Content-Type` => formato de los datos que envían al servidor.
+<br>
+formatos suelen ser: **_uft-8_** / **_ISO-8859-1_**
+<br>
+_ej. text/html, text/xml, application/json_
+
+### Respuesta
+- `Content-Type` => formato de los datos que envían al servidor.
+<br>
+formatos suelen ser: **_uft-8_** / **_ISO-8859-1_**
+<br>
+_ej. text/html, text/xml, application/json_
+
+- `Content Language` => idioma de los datos que se retornan
+
+- `Content-Length` => tamaño de los datos en bytes
+
+- `Cache-Control` => Cuanto tiempo pueden estar cacheados los datos
+
+---
+<br>
+
+## 5. Estados HTTP
+indica si una petición ha tenido éxito o no. 
+<br>
+Sus principales son:
+
+- `200-299`: la petición ha tenido éxito
+
+- `300-399`: redirección de los datos
+
+- `400-499`: datos enviados por el cliente no son correctos
+
+- `500-599`: se ha producido un error en el servidor
+
+---
+<br>
+
+## 6. Métodos
+indican que acción queremos hacer con los datos.
+
+- `GET` => obtener datos
+
+- `POST` => añadir los datos
+
+- `PUT` => actualizar datos
+
+- `DELETE` => borrar datos
+
+ej. 
+```http
+// obtener fichero index.html
+
+GET /index.html HTTP/1.1
+Host: www.fpmislata.com
+Accept-Language: fr
+```
+
+---
+<br>
+
+## 7. REST 
+aprovecha al máximo las capacidades de HTTP en lugar de reinventar procesos o estructuras que ya están bien definidas en el protocolo
+<br>
+formato usado en datos de forma general: `JSON`
+
+### operaciones a realizar
+```javascript
+| Método HTTP | Descripción                                             | Método CRUD | Método SQL |
+|-------------|---------------------------------------------------------|-------------|------------|
+| GET         | Usado para leer datos del servidor                      | Read        | SELECT     |
+| POST        | Usado para añadir datos al servidor                     | Create      | INSERT     |
+| PUT         | Usado para actualizar datos en el servidor              | Update      | UPDATE     |
+| DELETE      | Usado para borrar datos del servidor                    | Delete      | DELETE     |
+```
+<br>
+
+### estructura de la url
+```javascript
+| Descripción           | URL                | Método HTTP | JSON Enviado       | JSON Retornado      |
+|-----------------------|--------------------|-------------|--------------------|---------------------|
+| Obtener un libro      | /libro/{idLibro}   | GET         | Ninguno            | Libro leído         |
+| Listado de libros     | /libro             | GET         | Ninguno            | Array de Libros     |
+| Añadir un libro       | /libro             | POST        | Libro a insertar   | Libro insertado     |
+| Actualizar un libro   | /libro/{idLibro}   | PUT         | Libro a actualizar | Libro actualizado   |
+| Borrar un libro       | /libro/{idLibro}   | DELETE      | Ninguno            | Ninguno             |
+```
+
+---
+<br>
+
+## 8. Servidor REST en NodeJS
+modificar nuestro servidor en NodeJS para poder leer y modificar cosas relacionadas con HTTP.
+
+- leer cabeceras
+
+- aceptar varios métodos
+
+- retornar varios códigos de estado
+
+- devolver cabeceras
+
+```js
+const express = require('express')
+const app = express()
+const port = 80
+  
+app.get('/', (request, response) => {
+  response.set('Content-Type', 'text/plain');
+  response.status(200);
+ 
+  if (request.header('Accept-Language').startsWith("ca-ES")) {
+    response.send("Hola mon");
+  } else if (request.header('Accept-Language').startsWith("en-EN")) {
+    response.send("Hello World");
+  } else  {
+    response.send("Hola mundo");
+  }
+ 
+   
+});
+app.post('/', (request, response) => {
+  response.status(200);
+  response.send('Hello from post!');
+});
+app.delete('/', (request, response) => {
+  response.status(200);
+  response.send('Hello from delete!');
+});
+app.delete('/libro/38', (request, response) => {
+  response.status(200);
+  response.send('Borrado libro 38');
+});
+app.delete('/libro/39', (request, response) => {
+  response.status(404);
+  response.send('El libro 39 no existe');
+});
+  
+app.listen(port, (err) => {
+  console.log(`server is listening on ${port}`)
+})
+```
