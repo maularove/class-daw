@@ -50,7 +50,9 @@ git clone https://github.com/lgonzalezmislata/prueba.git
 <br>
 archivo vacío que permite mantener un directorio vacío en el repositorio
 
-`.gitignore` => archivo que especifica que archivos queremos que **_git_** ignore
+`.gitignore` => 
+<br>
+archivo que especifica que archivos queremos que **_git_** ignore
 
 ---
 <br>
@@ -148,11 +150,11 @@ git push origin master
 <br>
 
 ```js
-| Comando     | Descripción                                                                                             | Fusión de cambios en tu rama actual |
-|-------------|---------------------------------------------------------------------------------------------------------|-------------------------------------|
-| git fetch   | Descarga los cambios del repositorio remoto, pero no los integra en la rama actual.                     | ❌                                  |
-| git pull    | Descarga y fusiona los cambios de una rama remota en tu rama actual (combinación de fetch y merge).     | ✔️                                  |
-| git merge   | Fusiona otra rama (local o remota) en tu rama actual, pero no descarga cambios de un remoto.            | ✔️                                  |
+| Comando     | Descripción                                                                                        | Fusión cambios en rama actual |
+|-------------|----------------------------------------------------------------------------------------------------|-------------------------------|
+| git fetch   | Descarga los cambios del repositorio remoto, pero no los integra en la rama actual.                | ❌                           |
+| git pull    | Descarga y fusiona los cambios de una rama remota en tu rama actual (combinación de fetch y merge).| ✔️                           |
+| git merge   | Fusiona otra rama (local o remota) en tu rama actual, pero no descarga cambios de un remoto.       | ✔️                           |
 ```
 <br>
 
