@@ -114,6 +114,21 @@ git commit -a -m "mensaje"
 git commit --amend
 ```
 
+- squash
+```js
+// varios commits se unen en uno solo
+// rama main y develop => (en develop)
+git add . && git commit -m "primer commit"
+git add . && git commit -m "segundo commit"
+
+git switch main
+
+git merge --squash squashh
+
+// te lo dejará como modificado, debemos añadir y commitear
+git add . && git commit -m "squash muchos microcommits"
+```
+
 - restore
 ```js
 // vuelve versión último commit (borra cambios workspace)
@@ -197,6 +212,27 @@ git remote add otroservidor https://www.otroservidor.com/lgonzalezmislata/prueba
 ```js
 // cambiar rama
 git switch rama
+
+// cambiar a una rama remota o a un commit concreto
+git switch --detach origin/develop
+git switch --detach 2308b63
+```
+<br>
+
+- stash 
+```js
+// stash => guardar cambios temporalmente
+// guarda lo modificado (estén o no en el staged area)
+git stash push
+
+// guarda todo aunque NO estén en la stage area / ficheros nuevos
+git stash push --include-untracked 
+
+// guarda lo modificado / ficheros nuevos / ficheros ignorados
+git stash --all
+
+// recupera cambios y los mantiene en el staging area
+git stash pop --index
 ```
 
 ---
@@ -223,3 +259,66 @@ rama `master` => donde queremos copiar los commits de nuestra rama master
 <br>
 
 `origin master` => con separación (hace referencia al remoto)
+
+---
+<br>
+
+## 5. Mensajes de commit
+
+**_type(#issue):títulos_**
+
+`#` => al ocurrir un error, se convierte en un enlace directo 
+<br>
+
+ej.
+```js
+git commit -m "primer commit (#1)"
+```
+
+### Tipos de mensajes:
+
+`feat` => 
+<br>
+añade nueva funcionalidad (feature)
+
+`fix` =>
+<br>
+se arregla un error
+
+`docs` => 
+<br>
+solo cambios de documentación
+
+`style` =>
+<br>
+solo cambios del estilo del código: tabuladores, puntos, comas...
+
+`refactor` =>
+<br>
+cambiar código para mejora de calidad _sin_ modificar la funcionalidad
+
+`test` =>
+<br>
+cambios relacionados con test automáticos
+
+`chore` =>
+cambios relacionados con despliegue
+<br>
+
+### #ISSUE 
+nº de la incidencia a la que se hace referencia
+<br>
+
+ej. arreglo fallo 45 "falla si la fecha está vacía"
+```js
+fix(#45):Falla si la fecha está vacía
+```
+<br>
+
+ej. nueva funcionalidad llamada "mostrar listado pacientes" nº 456
+```js
+feat(#456):Mostrar listado de pacientes
+```
+
+---
+<br>
