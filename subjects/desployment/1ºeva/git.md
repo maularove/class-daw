@@ -180,6 +180,24 @@ git reset --continue
 // revertir rango de commit (desde HEAD 3 hacia atrás)
 git revert -n HEAD~3..HEAD
 ``` 
+<br>
+
+- remote
+```js
+// (( remote -> referencia a servidor de git donde subimos el código ))
+// ver lista de remotes
+git remote -v
+
+// añadir nuevo remote
+git remote add otroservidor https://www.otroservidor.com/lgonzalezmislata/prueba.git 
+``` 
+<br>
+
+- ramas 
+```js
+// cambiar rama
+git switch rama
+```
 
 ---
 <br>
