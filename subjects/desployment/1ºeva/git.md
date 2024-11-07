@@ -129,6 +129,16 @@ git merge --squash squashh
 git add . && git commit -m "squash muchos microcommits"
 ```
 
+- merge
+```js
+// pone los commits de la rama que has creado a tu otra rama, delante de los commits anteriores
+git rebase rama
+
+// ayuda a detectar si hay un problema (fast-forward)
+// juntar dos ramas ej. feature && main
+git merge --ff-only rama
+```
+
 - restore
 ```js
 // vuelve versión último commit (borra cambios workspace)
@@ -216,6 +226,32 @@ git switch rama
 // cambiar a una rama remota o a un commit concreto
 git switch --detach origin/develop
 git switch --detach 2308b63
+
+// crear nueva rama
+git branch rama
+
+// subir rama
+git push --set-upstream origin rama
+git push -u origin rama
+
+// bajar una rama
+// --prune => borrar referencias locales de ramas remotas que ya no están
+git fetch --prune
+
+// por defecto al cambiar a rama ya se hace un --track a origin/rama
+git switch rama
+
+// borrar rama en local que ha sido subida / mergeada
+git branch -d rama
+git branch --delete rama
+
+// borrar rama local que NO ha sido mergeada ni subida
+git branch -d -f rama
+git branch --delete --force rama
+git branch -D rama
+
+// borrar rama en remoto
+git push origin --delete rama
 ```
 <br>
 
