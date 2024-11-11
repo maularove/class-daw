@@ -123,7 +123,7 @@ git add . && git commit -m "segundo commit"
 
 git switch main
 
-git merge --squash squashh
+git merge --squash develop
 
 // te lo dejará como modificado, debemos añadir y commitear
 git add . && git commit -m "squash muchos microcommits"
