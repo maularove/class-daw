@@ -166,7 +166,7 @@ ej. Google Docs (Google), MS Office 365 (Microsoft), DropBcx...
 | Modelo       | Versatilidad                  | Facilidad de uso                |
 |--------------|-------------------------------|----------------------------------|
 | IAAS         | ➕ versatil      | ➕ complicado de hacer y administrar |
-| PAAS         | ➖ versatil    | ➕ fácil de usar      |
+| PAAS         | ➖ versatil    | ➖ complicado de usar      |
 
 <br>
 
