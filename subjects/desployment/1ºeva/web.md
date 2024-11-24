@@ -313,3 +313,95 @@ la más usada debido a =>
 | U+0080..07FF     | 110xxxxx | 10xxxxxx |          |          |
 | U+0800..FFFF     | 1110xxxx | 10xxxxxx | 10xxxxxx |          |
 | U+10000..10FFFF  | 11110xxx | 10xxxxxx | 10xxxxxx | 10xxxxxx |
+<br>
+
+---
+
+## 7. Administración de Servidores Web
+### Tipos de Servidores Web 
+Hay dos grandes tipos de servidores web:
+<br>
+
+servidores web `externos` =>
+<br>
+programas completos que hacen de servidor web 
+<br>
+una vez instalado se añade el código específico de la aplicación en la carpeta del servidor que indique la documentación
+<br>
+
+servidores web `integrados` =>
+<br>
+se hace una app (ej. JAVA) y se añade el código del servidor web como una librería (un JAR)
+<br>
+
+---
+
+### Servidores Web Externos 
+- ___Apache HTTP Server Project___ =>
+<br>
+
+nombre fundación: __Apache Software Function__
+<br>
+nombre server web: ___Apache HTTP Server Project___
+<br>
+
+`instalación`: descargar y ejecutar programa ___/bin/httpd.exe___
+<br>
+
+`despliegue`: copiar página web en carpeta ___htdocs___
+<br>
+
+`configuración / administración`: para ello hay que modificar los ficheros de la carpeta ___conf___
+<br>
+
+- ___nginx___ =>
+<br>
+
+`instalación`: descargar y ejecutar programa ___nginx.exe___
+<br>
+
+`despliegue`: copiar página web en carpeta ___html___
+<br>
+
+`configuración / administración`: para ello hay que modificar los ficheros de la carpeta ___conf___
+<br>
+
+---
+
+### Servidores Web Integrados
+lo veremos poniendo de ejemplo al lenguaje NodeJS y la librería Express
+<br>
+
+instalar paquete 
+```bash 
+npm install express
+```
+<br>
+
+ejemplo hello world
+```js 
+#!/usr/bin/env node
+ 
+const express = require('express')
+const app = express()
+const port = 8080
+ 
+app.get('/', (request, response) => {
+  response.send('Hello from Express!')
+})
+ 
+ 
+app.listen(port, (err) => {
+  console.log(`server is listening on ${port}`)
+})
+```
+<br>
+
+ejecutamos fichero index.js 
+```js
+// se verá en el navegador
+// http://localhost:8080 
+node index.js
+```
+
+
