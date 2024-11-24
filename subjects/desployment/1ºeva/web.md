@@ -296,11 +296,16 @@ ya que estos se representan en un solo byte
 
 la más usada debido a =>
 <br>
+
 - su ___compatibilidad___ con sistemas más antiguos que utilizan ASCII
 <br>
+
 - capacidad para ___codificar___ cualquier carácter Unicode
 <br>
+
 - eficiencia en ___almacenamiento___ para la mayoria de lenguajes occidentales
+<br>
+
 
 | Code Point Range | Byte 1   | Byte 2   | Byte 3   | Byte 4   |
 |------------------|----------|----------|----------|----------|
