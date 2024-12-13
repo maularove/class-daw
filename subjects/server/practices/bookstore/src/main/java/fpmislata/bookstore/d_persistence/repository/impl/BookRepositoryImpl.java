@@ -31,7 +31,16 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public Optional<Book> findByIsbn(String isbn) {
-        return bookDao.findByIsbn(isbn);
+        Optional<Book> optionalBook = bookDao.findByIsbn(isbn);
+        if (optionalBook.isEmpty()) {
+            return Optional.empty();
+        }
+
+        Book book = optionalBook.get();
+        List<Author> authorList = authorDao.findAllByBookId(book.getId());
+        book.setAuthors(authorList);
+
+        return Optional.of(book);
     }
 
     @Override
