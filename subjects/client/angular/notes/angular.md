@@ -157,3 +157,68 @@ bloques básicos de construcción de las páginas web en Angular.
 
 - parte funcional ____TypeScript____
 
+### Ciclo de vida de los componentes:
+
+`ngOnChanges:`
+<br>
+se ejecuta =>
+<br>
+cuando se detecta un cambio en las propiedades de entrada del componente
+
+<br>
+
+`ngOnInit:`
+<br>
+se ejecuta 1 vez =>
+<br>
+después de que el componente ha sido inicializado y sus propiedades han sido establecidos
+
+<br>
+
+`ngDoCheck:`
+<br>
+se ejecuta =>
+<br>
+después de cada detención de cambios
+permite realizar comprobaciones personalizadas
+
+<br>
+
+`ngAfterContentInit:`
+<br>
+se ejecuta una vez =>
+<br>
+después de que el contenido del componente (plantillas hijas) haya sido inicializado.
+
+<br>
+
+`ngAfterContentChecked:`
+<br>
+se ejecuta =>
+<br>
+después de cada detección de cambios en el contenido del componente.
+
+<br>
+
+`ngAfterViewInit:`
+<br>
+se ejecuta una vez =>
+<br>
+después de que la vista del componente (DOM) haya sido realizado
+
+<br>
+
+`ngAfterViewChecked:`
+<br>
+se ejecuta =>
+<br>
+después  de cada detección de cambios en la vista del componente.
+
+<br>
+
+`ngOnDestroy:`
+<br>
+se ejecuta =>
+<br>
+antes de que el componente sea destruido
+permite realizar tareas de limpieza
